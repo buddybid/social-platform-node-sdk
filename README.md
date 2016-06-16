@@ -1,1 +1,1 @@
-# social-platform-node-sdk
+# BuddyBid Social Platform Node SDK
