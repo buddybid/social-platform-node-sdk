@@ -1,0 +1,30 @@
+{
+  "name": "buddybid-social-platform-sdk",
+  "version": "0.0.1",
+  "description": "This is a wrapper around BuddyBid Social Platform API",
+  "contributors": [
+    {
+      "name": "Tim P",
+      "email": "development@buddybid.com"
+    }
+  ],
+  "main": "lib/buddybid.js",
+  "dependencies": {
+    "lodash": "^4.13.1",
+    "querystring": "^0.2.0",
+    "superagent": "^2.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/buddybid/social-platform-node-sdk.git"
+  },
+  "keywords": [
+    "buddybid",
+    "social commerce",
+    "commerce everywhere"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "should": "^9.0.2"
+  }
+}
