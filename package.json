@@ -3,10 +3,7 @@
   "version": "1.0.1",
   "description": "This is a wrapper around BuddyBid Social Platform API",
   "contributors": [
-    {
-      "name": "Tim P",
-      "email": "development@buddybid.com"
-    }
+    "Tim P <development@buddybid.com>"
   ],
   "main": "lib/buddybid.js",
   "dependencies": {
@@ -26,5 +23,16 @@
   "license": "MIT",
   "devDependencies": {
     "should": "^9.0.2"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/buddybid/social-platform-node-sdk/issues"
+  },
+  "homepage": "https://github.com/buddybid/social-platform-node-sdk#readme",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tim P"
 }

@@ -15,3 +15,9 @@ BB.get('/owner/56a687ce13e2df0875b457e1', function(err, body) {
   console.log(body);
 });                                                      
 ```
+
+# NPM
+
+```bash
+npm install buddybid-social-platform-sdk --save                                        
+```
