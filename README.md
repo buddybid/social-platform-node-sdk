@@ -1,6 +1,7 @@
 # BuddyBid Social Platform Node SDK
 
 *More information about BuddyBId Social Commerce visit [BuddyBid Commerce Everywhere](https://www.buddybid.com)*
+
 *API Documentation information [BuddyBid Social Commerce API Documentation](https://buddybid.co/api/documentation/)*
 
 
