@@ -7,8 +7,8 @@ describe('BuddyBid Social Platform API', function() {
 
     beforeEach(function(done) {
         BB = new BuddyBid({ baseEndpoint:'dev-jake.internal.buddybid.com:3000',
-                            ownerId: '5750ff93a235aeb11ac21e27',
-                            apiKey:'a9895957bb5e2749ad1401745c557ff3'});
+                            ownerId: '598a71e294a3cb1057000001',
+                            apiKey:'249321bacd60f54feb79ab57a776ea22'});
         done();
     });
 
@@ -47,20 +47,60 @@ describe('BuddyBid Social Platform API', function() {
             BB.post.should.be.type('function');
             done();
         });
+
+        it('get function returns Promise', function(done) {
+            (BB.get() instanceof Promise).should.be.true();
+            done();
+        });
+
+        it('put function returns Promise', function(done) {
+            (BB.put() instanceof Promise).should.be.true();
+            done();
+        });
+
+        it('delete function returns Promise', function(done) {
+            (BB.delete() instanceof Promise).should.be.true();
+            done();
+        });
+
+        it('post function returns Promise', function(done) {
+            (BB.post() instanceof Promise).should.be.true();
+            done();
+        });
     });
 
     describe('Request Methods', function () {
         it('GET request', function(done) {
-            BB.get('/owner/5750ff93a235aeb11ac21e27', function(err, body) {
+            BB.get('/owner/598a71e294a3cb1057000001', function(err, body) {
                 should.not.exists(err);
                 done();
             });
         });
 
-        it('DELETE request', function(done) {
-            BB.delete('/users/57510d0dc4197d101b754da8/watchlist/581a8e1168e897850de8ea6d', function(err, body) {
-                should.not.exists(err);
+        it('PUT request ', function(done) {
+            BB.get('/listing/by/reference/1450849', function (err, data) {
+                const listing = data;
+                listing.title = 'modified using Callback';
+                BB.put('/listing/' + listing.listingId, listing, function (err, data) {
+                    done();
+                });
+            });
+        });
+
+        it('GET request using Promise', function(done) {
+            BB.get('/owner/598a71e294a3cb1057000001').then(data => {
+                should.exists(data);
                 done();
+            });
+        });
+
+        it('PUT request using Promise', function(done) {
+            BB.get('/listing/by/reference/1450849').then(data => {
+                const listing = data;
+                listing.title = 'modified using Promise';
+                BB.put('/listing/' + listing.listingId, listing).then(data => {
+                    done();
+                });
             });
         });
     });

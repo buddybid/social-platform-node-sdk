@@ -1,6 +1,6 @@
 {
   "name": "buddybid-social-platform-sdk",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "This is a wrapper around BuddyBid Social Platform API",
   "contributors": [
     "Tim P <development@buddybid.com>"
