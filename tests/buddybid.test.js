@@ -1,14 +1,17 @@
-var should = require('should');
-const BuddyBid = require('../lib/buddybid');
-var BB = null;
+'use strict';
 
+const should = require('should');
+const BuddyBid = require('../lib/buddybid');
 
 describe('BuddyBid Social Platform API', function() {
+    let BB = null;
 
     beforeEach(function(done) {
-        BB = new BuddyBid({ baseEndpoint:'dev-jake.internal.buddybid.com:3000',
-                            ownerId: '598a71e294a3cb1057000001',
-                            apiKey:'249321bacd60f54feb79ab57a776ea22'});
+        BB = new BuddyBid({
+            baseEndpoint: '',
+            ownerId: '',
+            apiKey: ''
+        });
         done();
     });
 
@@ -110,7 +113,28 @@ describe('BuddyBid Social Platform API', function() {
     });
 });
 
+describe('BBHub API', function() {
+    let BB = null;
 
+    beforeEach(function(done) {
+        BB = new BuddyBid({
+            platform: 'bbhub',
+            baseEndpoint: '',
+            apiKey: ''
+        });
+        done();
+    });
 
+    describe('Request Methods', function () {
+        it('GET request', function(done) {
+            BB.get('/api/listing/5a0cab26f06c6c2b98d526ba', function(err, body) {
+                should.not.exists(err);
+                done();
+            });
+        });
+    });
 
-
+    afterEach(function(done) {
+        done();
+    });
+});
